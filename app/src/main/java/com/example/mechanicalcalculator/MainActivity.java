@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
                 display.setText(Double.toString(angka1));
             } else if (angka2 != 0) {
                 display.setText(Double.toString(angka2));
-            } else if (hasil != 0) {
+            } else  {
                 display.setText(Double.toString(hasil));
             }
         }
