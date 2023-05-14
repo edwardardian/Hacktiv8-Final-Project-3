@@ -99,21 +99,22 @@ public class MainActivity extends AppCompatActivity {
         btnAngka1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("1");
+                display.setText(display.getText() + "1");
             }
         });
+
 
         btnAngka2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("2");
+                display.setText(display.getText() + "2");
             }
         });
 
         btnAngka3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("3");
+                display.setText(display.getText() + "3");
             }
         });
 
