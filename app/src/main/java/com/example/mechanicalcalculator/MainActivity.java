@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnDelete, btnAnswer, btnAngka1, btnAngka2, btnAngka3, btnAngka4,btnAngka5,
             btnAngka6, btnAngka7, btnAngka8, btnAngka9, btnAngka0, btnPembagian, btnPengurangan,
-            btnPerkalian, btnPertambahan, btnSisaBagi;
+            btnPerkalian, btnPertambahan, btnSisaBagi, btnTitik;
 
     boolean tambah, kurang, bagi, kali, sisaBagi;
 
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         btnPerkalian = findViewById(R.id.btnPerkalian);
         btnPertambahan = findViewById(R.id.btnPertambahan);
         btnSisaBagi = findViewById(R.id.btnSisaBagi);
+        btnTitik = findViewById(R.id.btnTitik);
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +118,50 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnAngka4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                display.setText("4");
+            }
+        });
+
+        btnAngka5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                display.setText("5");
+            }
+        });
+
+        btnAngka6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                display.setText("6");
+            }
+        });
+
+        btnAngka7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                display.setText("7");
+            }
+        });
+
+        btnAngka8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                display.setText("8");
+            }
+        });
+
+        btnAngka9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                display.setText("9");
+            }
+        });
+
+
+
         btnPembagian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,10 +169,30 @@ public class MainActivity extends AppCompatActivity {
                     angka1 = Double.parseDouble(display.getText().toString());
                     display.setText(null);
                     bagi = true;
-                } else {
+                }
+
+
+                else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!!!", Toast.LENGTH_SHORT).show();
                 }
             }
+
+        });
+        btnPengurangan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(display.getText().length() != 0) {
+                    angka1 = Double.parseDouble(display.getText().toString());
+                    display.setText(null);
+                    kurang = true;
+                }
+
+
+                else {
+                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!!!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
         });
     }
 }
