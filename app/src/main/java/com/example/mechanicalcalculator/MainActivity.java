@@ -122,42 +122,42 @@ public class MainActivity extends AppCompatActivity {
         btnAngka4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText(display.getText()+"4");
+                display.append("4");
             }
         });
 
         btnAngka5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText(display.getText()+"5");
+                display.append("5");
             }
         });
 
         btnAngka6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText(display.getText()+"6");
+                display.append("6");
             }
         });
 
         btnAngka7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText(display.getText()+"7");
+                display.append("7");
             }
         });
 
         btnAngka8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText(display.getText()+"8");
+                display.append("8");
             }
         });
 
         btnAngka9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText(display.getText()+"9");
+                display.append("9");
             }
         });
 
