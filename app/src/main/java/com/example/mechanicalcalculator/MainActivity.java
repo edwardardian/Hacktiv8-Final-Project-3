@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.setText("");
-                angka1 = 0.0;
-                angka2 = 0.0;
+                angka1 = 0;
+                angka2 = 0;
             }
         });
 
@@ -97,10 +97,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         btnAngka1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText(display.getText() + "1");
+                display.append("1");
             }
         });
 
@@ -108,14 +109,14 @@ public class MainActivity extends AppCompatActivity {
         btnAngka2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText(display.getText() + "2");
+                display.append("2");
             }
         });
 
         btnAngka3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText(display.getText() + "3");
+                display.append("3");
             }
         });
 
@@ -161,8 +162,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         btnPembagian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -170,10 +169,7 @@ public class MainActivity extends AppCompatActivity {
                     angka1 = Double.parseDouble(display.getText().toString());
                     display.setText(null);
                     bagi = true;
-                }
-
-
-                else {
+                } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!!!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -186,14 +182,46 @@ public class MainActivity extends AppCompatActivity {
                     angka1 = Double.parseDouble(display.getText().toString());
                     display.setText(null);
                     kurang = true;
-                }
-
-
-                else {
+                } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!!", Toast.LENGTH_SHORT).show();
                 }
             }
 
         });
+
+        if(savedInstanceState != null) {
+            angka1 = savedInstanceState.getDouble("savedAngka1");
+            angka2 = savedInstanceState.getDouble("savedAngka2");
+            hasil = savedInstanceState.getDouble("savedHasil");
+
+            if (angka1 != 0) {
+                display.setText(Double.toString(angka1));
+            } else if (angka2 != 0) {
+                display.setText(Double.toString(angka2));
+            } else if (hasil != 0) {
+                display.setText(Double.toString(hasil));
+            }
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putDouble("savedAngka1", angka1);
+        outState.putDouble("savedAngka2", angka2);
+        outState.putDouble("savedHasil", hasil);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        if (angka1 != 0) {
+            display.setText(Double.toString(angka1));
+        } else if (angka2 != 0) {
+            display.setText(Double.toString(angka2));
+        } else if (hasil != 0) {
+            display.setText(Double.toString(hasil));
+        }
     }
 }
