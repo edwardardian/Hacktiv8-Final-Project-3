@@ -122,42 +122,42 @@ public class MainActivity extends AppCompatActivity {
         btnAngka4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("4");
+                display.setText(display.getText()+"4");
             }
         });
 
         btnAngka5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("5");
+                display.setText(display.getText()+"5");
             }
         });
 
         btnAngka6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("6");
+                display.setText(display.getText()+"6");
             }
         });
 
         btnAngka7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("7");
+                display.setText(display.getText()+"7");
             }
         });
 
         btnAngka8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("8");
+                display.setText(display.getText()+"8");
             }
         });
 
         btnAngka9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("9");
+                display.setText(display.getText()+"9");
             }
         });
 
@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 else {
-                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!!!", Toast.LENGTH_SHORT).show();
                 }
             }
 
