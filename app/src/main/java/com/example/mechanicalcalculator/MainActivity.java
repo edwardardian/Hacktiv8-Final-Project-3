@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 else {
-                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!!", Toast.LENGTH_SHORT).show();
                 }
             }
 
