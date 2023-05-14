@@ -230,7 +230,7 @@
             android:textSize="20dp"/>
 
         <Button
-            android:id="@+id/btn0"
+            android:id="@+id/btnAngka0"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
@@ -241,7 +241,7 @@
             android:textSize="20dp"/>
 
         <Button
-            android:id="@+id/btnPersen"
+            android:id="@+id/btnSisaBagi"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
