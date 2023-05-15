@@ -273,6 +273,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnPertambahan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (display.getText().length() != 0) {
+                    angka1 = Double.parseDouble(display.getText().toString());
+                    display.setText(null);
+                    tambah = true;
+                    desimal = false;
+                } else {
+                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         if (savedInstanceState != null) {
             angka1 = savedInstanceState.getDouble("angka1");
             angka2 = savedInstanceState.getDouble("angka2");
