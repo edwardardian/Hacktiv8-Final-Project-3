@@ -123,49 +123,49 @@ public class MainActivity extends AppCompatActivity {
         btnAngka4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("4");
+                display.append("4");
             }
         });
 
         btnAngka5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("5");
+                display.append("5");
             }
         });
 
         btnAngka6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("6");
+                display.append("6");
             }
         });
 
         btnAngka7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("7");
+                display.append("7");
             }
         });
 
         btnAngka8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("8");
+                display.append("8");
             }
         });
 
         btnAngka9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("9");
+                display.append("9");
             }
         });
 
         btnPembagian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(display.getText().length() != 0) {
+                if (display.getText().length() != 0) {
                     angka1 = Double.parseDouble(display.getText().toString());
                     display.setText(null);
                     bagi = true;
@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         btnPengurangan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(display.getText().length() != 0) {
+                if (display.getText().length() != 0) {
                     angka1 = Double.parseDouble(display.getText().toString());
                     display.setText(null);
                     kurang = true;
@@ -186,42 +186,40 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!!", Toast.LENGTH_SHORT).show();
                 }
             }
-
         });
+        if (savedInstanceState != null) {
+            angka1 = savedInstanceState.getDouble("angka1");
+            angka2 = savedInstanceState.getDouble("angka2");
+            hasil = savedInstanceState.getDouble("hasil");
 
-        if(savedInstanceState != null) {
-            angka1 = savedInstanceState.getDouble("savedAngka1");
-            angka2 = savedInstanceState.getDouble("savedAngka2");
-            hasil = savedInstanceState.getDouble("savedHasil");
+            tambah = savedInstanceState.getBoolean("tambah");
+            kurang = savedInstanceState.getBoolean("kurang");
+            kali = savedInstanceState.getBoolean("kali");
+            bagi = savedInstanceState.getBoolean("bagi");
+            sisaBagi = savedInstanceState.getBoolean("sisaBagi");
 
-            if (angka1 != 0) {
-                display.setText(Double.toString(angka1));
-            } else if (angka2 != 0) {
-                display.setText(Double.toString(angka2));
-            } else  {
-                display.setText(Double.toString(hasil));
-            }
+            display.setText(savedInstanceState.getString("displayText"));
         }
     }
-
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putDouble("savedAngka1", angka1);
-        outState.putDouble("savedAngka2", angka2);
-        outState.putDouble("savedHasil", hasil);
+
+        outState.putDouble("angka1", angka1);
+        outState.putDouble("angka2", angka2);
+        outState.putDouble("hasil", hasil);
+
+        outState.putBoolean("tambah", tambah);
+        outState.putBoolean("kurang", kurang);
+        outState.putBoolean("kali", kali);
+        outState.putBoolean("bagi", bagi);
+        outState.putBoolean("sisaBagi", sisaBagi);
+
+        outState.putString("displayText", display.getText().toString());
     }
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-
-        if (angka1 != 0) {
-            display.setText(Double.toString(angka1));
-        } else if (angka2 != 0) {
-            display.setText(Double.toString(angka2));
-        } else if (hasil != 0) {
-            display.setText(Double.toString(hasil));
-        }
     }
 }
