@@ -3,6 +3,8 @@ package com.example.mechanicalcalculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView display;
 
-    private Button btnDelete, btnAnswer, btnAngka1, btnAngka2, btnAngka3, btnAngka4,btnAngka5,
+    private Button btnDelete, btnAnswer, btnAngka1, btnAngka2, btnAngka3, btnAngka4,btnAngka5, btnClear,
             btnAngka6, btnAngka7, btnAngka8, btnAngka9, btnAngka0, btnPembagian, btnPengurangan,
             btnPerkalian, btnPertambahan, btnSisaBagi, btnTitik;
 
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         display = findViewById(R.id.display);
 
         btnDelete = findViewById(R.id.btnDelete);
+        btnClear = findViewById(R.id.btnClear);
         btnAnswer = findViewById(R.id.btnAnswer);
         btnAngka1 = findViewById(R.id.btnAngka1);
         btnAngka2 = findViewById(R.id.btnAngka2);
@@ -48,12 +51,25 @@ public class MainActivity extends AppCompatActivity {
         btnSisaBagi = findViewById(R.id.btnSisaBagi);
         btnTitik = findViewById(R.id.btnTitik);
 
-        btnDelete.setOnClickListener(new View.OnClickListener() {
+        btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText("");
+                display.setText(null);
                 angka1 = 0;
                 angka2 = 0;
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String backspace = null;
+                if (display.getText().length() > 0){
+                    StringBuilder stringBuilder = new StringBuilder(display.getText());
+                    stringBuilder.deleteCharAt(display.getText().length() - 1);
+                    backspace = stringBuilder.toString();
+                    display.setText(backspace);
+                }
             }
         });
 
@@ -97,94 +113,104 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnTitik.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                display.append(".");
+                if(display.getText().length() >= 54){
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
+        btnAngka0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                display.append("0");
+                if(display.getText().length() >= 54){
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         btnAngka1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 display.append("1");
                 if(display.getText().length() >= 54){
-                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
 
         btnAngka2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 display.append("2");
                 if(display.getText().length() >= 54){
-                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
         btnAngka3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 display.append("3");
                 if(display.getText().length() >= 54){
-                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
         btnAngka4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 display.append("4");
                 if(display.getText().length() >= 54){
-                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
         btnAngka5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 display.append("5");
                 if(display.getText().length() >= 54){
-                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
         btnAngka6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 display.append("6");
                 if(display.getText().length() >= 54){
-                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
         btnAngka7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 display.append("7");
                 if(display.getText().length() >= 54){
-                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
         btnAngka8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 display.append("8");
                 if(display.getText().length() >= 54){
-                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
         btnAngka9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 display.append("9");
                 if(display.getText().length() >= 54){
-                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -197,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
                     display.setText(null);
                     bagi = true;
                 } else {
-                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -210,10 +236,35 @@ public class MainActivity extends AppCompatActivity {
                     display.setText(null);
                     kurang = true;
                 } else {
-                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+        btnPerkalian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (display.getText().length() != 0) {
+                    angka1 = Double.parseDouble(display.getText().toString());
+                    display.setText(null);
+                    kali = true;
+                } else {
+                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        btnSisaBagi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (display.getText().length() != 0) {
+                    angka1 = Double.parseDouble(display.getText().toString());
+                    display.setText(null);
+                    sisaBagi = true;
+                } else {
+                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         if (savedInstanceState != null) {
             angka1 = savedInstanceState.getDouble("angka1");
             angka2 = savedInstanceState.getDouble("angka2");
@@ -228,6 +279,7 @@ public class MainActivity extends AppCompatActivity {
             display.setText(savedInstanceState.getString("displayText"));
         }
     }
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
