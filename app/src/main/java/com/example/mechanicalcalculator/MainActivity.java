@@ -102,6 +102,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("1");
+                if(display.getText().length() >= 54){
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -110,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("2");
+                if(display.getText().length() >= 54){
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -117,6 +123,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("3");
+                if(display.getText().length() >= 54){
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -124,6 +133,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("4");
+                if(display.getText().length() >= 54){
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -131,6 +143,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("5");
+                if(display.getText().length() >= 54){
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -138,6 +153,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("6");
+                if(display.getText().length() >= 54){
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -145,6 +163,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("7");
+                if(display.getText().length() >= 54){
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -152,6 +173,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("8");
+                if(display.getText().length() >= 54){
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -159,6 +183,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("9");
+                if(display.getText().length() >= 54){
+                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!!!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
