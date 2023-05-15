@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
             btnAngka6, btnAngka7, btnAngka8, btnAngka9, btnAngka0, btnPembagian, btnPengurangan,
             btnPerkalian, btnPertambahan, btnSisaBagi, btnTitik;
 
-    boolean tambah, kurang, bagi, kali, sisaBagi;
+    boolean tambah, kurang, bagi, kali, sisaBagi, desimal;
 
     double angka1 = 0, angka2 = 0, hasil;
 
@@ -116,9 +116,13 @@ public class MainActivity extends AppCompatActivity {
         btnTitik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                display.append(".");
-                if(display.getText().length() >= 54){
-                    Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
+                if(desimal){
+                } else {
+                    display.append(".");
+                    desimal = true;
+                    if (display.getText().length() >= 50) {
+                        Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -127,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 display.append("0");
-                if(display.getText().length() >= 54){
+                if(display.getText().length() >= 50){
                     Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -136,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("1");
-                if(display.getText().length() >= 54){
+                if(display.getText().length() >= 50){
                     Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -146,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("2");
-                if(display.getText().length() >= 54){
+                if(display.getText().length() >= 50){
                     Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -155,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("3");
-                if(display.getText().length() >= 54){
+                if(display.getText().length() >= 50){
                     Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -164,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("4");
-                if(display.getText().length() >= 54){
+                if(display.getText().length() >= 50){
                     Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -173,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("5");
-                if(display.getText().length() >= 54){
+                if(display.getText().length() >= 50){
                     Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -182,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("6");
-                if(display.getText().length() >= 54){
+                if(display.getText().length() >= 50){
                     Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -191,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("7");
-                if(display.getText().length() >= 54){
+                if(display.getText().length() >= 50){
                     Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -200,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("8");
-                if(display.getText().length() >= 54){
+                if(display.getText().length() >= 50){
                     Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -209,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 display.append("9");
-                if(display.getText().length() >= 54){
+                if(display.getText().length() >= 50){
                     Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -222,6 +226,7 @@ public class MainActivity extends AppCompatActivity {
                     angka1 = Double.parseDouble(display.getText().toString());
                     display.setText(null);
                     bagi = true;
+                    desimal = false;
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
                 }
@@ -235,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
                     angka1 = Double.parseDouble(display.getText().toString());
                     display.setText(null);
                     kurang = true;
+                    desimal = false;
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
                 }
@@ -247,6 +253,7 @@ public class MainActivity extends AppCompatActivity {
                     angka1 = Double.parseDouble(display.getText().toString());
                     display.setText(null);
                     kali = true;
+                    desimal = false;
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
                 }
@@ -259,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
                     angka1 = Double.parseDouble(display.getText().toString());
                     display.setText(null);
                     sisaBagi = true;
+                    desimal = false;
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
                 }
