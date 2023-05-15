@@ -117,12 +117,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(desimal){
+                    Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
                 } else {
                     display.append(".");
                     desimal = true;
-                    if (display.getText().length() >= 50) {
-                        Toast.makeText(getApplicationContext(), "Input yang anda masukkan telah mencapai batas!", Toast.LENGTH_SHORT).show();
-                    }
                 }
             }
         });
@@ -297,6 +295,7 @@ public class MainActivity extends AppCompatActivity {
             kali = savedInstanceState.getBoolean("kali");
             bagi = savedInstanceState.getBoolean("bagi");
             sisaBagi = savedInstanceState.getBoolean("sisaBagi");
+            desimal = savedInstanceState.getBoolean("desimal");
 
             display.setText(savedInstanceState.getString("displayText"));
         }
@@ -315,6 +314,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putBoolean("kali", kali);
         outState.putBoolean("bagi", bagi);
         outState.putBoolean("sisaBagi", sisaBagi);
+        outState.putBoolean("desimal", desimal);
 
         outState.putString("displayText", display.getText().toString());
     }
