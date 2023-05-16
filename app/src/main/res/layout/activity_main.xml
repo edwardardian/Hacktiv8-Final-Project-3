@@ -22,7 +22,9 @@
             android:background="@color/white"
             android:textColor="@color/black"
             android:maxLength="50"
-            android:textSize="40dp" />
+            android:textSize="40dp"
+            android:gravity="center"
+            android:textAlignment="textEnd"/>
 
     </LinearLayout>
 
@@ -65,9 +67,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.6"
             android:backgroundTint="@color/button"
-            android:text="Answer"
+            android:text="="
             android:textColor="@color/white"
             android:textSize="15dp" />
 
@@ -118,7 +120,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:layout_margin="1dp"
-            android:text="/"
+            android:text="÷"
             android:textColor="@color/white"
             android:backgroundTint="@color/buttonOperator"
             android:textSize="20dp"/>
