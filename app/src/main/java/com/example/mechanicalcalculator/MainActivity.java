@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     boolean tambah, kurang, bagi, kali, sisaBagi, desimal;
 
-    double angka1 = 0, angka2 = 0, hasil ,x;
+    double angka1 = 0, angka2 = 0, hasil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         btnAngka3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -163,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         btnAngka4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -172,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         btnAngka5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -181,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         btnAngka6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -199,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         btnAngka8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -208,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         btnAngka9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -222,10 +228,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (display.getText().length() != 0) {
-                    angka1 = Double.parseDouble(display.getText().toString());
-                    display.setText(null);
-                    bagi = true;
-                    desimal = false;
+                    if (!tambah && !kurang && !kali && !bagi && !sisaBagi) {
+                        angka1 = Double.parseDouble(display.getText().toString());
+                        display.setText(null);
+                        bagi = true;
+                        desimal = false;
+                    } else {
+                        angka2 = Double.parseDouble(display.getText().toString());
+                        hasil = angka1 / angka2;
+                        display.setText(null);
+                        angka1 = hasil;
+                        angka2 = 0;
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
                 }
@@ -236,10 +250,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (display.getText().length() != 0) {
-                    angka1 = Double.parseDouble(display.getText().toString());
-                    display.setText(null);
-                    kurang = true;
-                    desimal = false;
+                    if (!tambah && !kurang && !kali && !bagi && !sisaBagi) {
+                        angka1 = Double.parseDouble(display.getText().toString());
+                        display.setText(null);
+                        kurang = true;
+                        desimal = false;
+                    } else {
+                        angka2 = Double.parseDouble(display.getText().toString());
+                        hasil = angka1 - angka2;
+                        display.setText(null);
+                        angka1 = hasil;
+                        angka2 = 0;
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
                 }
@@ -249,26 +271,40 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (display.getText().length() != 0) {
-                    angka1 = Double.parseDouble(display.getText().toString());
-                    display.setText(null);
-                    kali = true;
-                    desimal = false;
+                    if (!tambah && !kurang && !kali && !bagi && !sisaBagi) {
+                        angka1 = Double.parseDouble(display.getText().toString());
+                        display.setText(null);
+                        kali = true;
+                        desimal = false;
+                    } else {
+                        angka2 = Double.parseDouble(display.getText().toString());
+                        hasil = angka1 * angka2;
+                        display.setText(null);
+                        angka1 = hasil;
+                        angka2 = 0;
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
-                } if (angka1 > 0){
-                angka2 = angka1 * angka2;
-                angka1 = angka2;
-            }
+                }
             }
         });
+
         btnSisaBagi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (display.getText().length() != 0) {
-                    angka1 = Double.parseDouble(display.getText().toString());
-                    display.setText(null);
-                    sisaBagi = true;
-                    desimal = false;
+                    if (!tambah && !kurang && !kali && !bagi && !sisaBagi) {
+                        angka1 = Double.parseDouble(display.getText().toString());
+                        display.setText(null);
+                        sisaBagi = true;
+                        desimal = false;
+                    } else {
+                        angka2 = Double.parseDouble(display.getText().toString());
+                        hasil = angka1 % angka2;
+                        display.setText(null);
+                        angka1 = hasil;
+                        angka2 = 0;
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
                 }
@@ -279,19 +315,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (display.getText().length() != 0) {
-                    angka1 = Double.parseDouble(display.getText().toString());
-                    display.setText(null);
-                    tambah = true;
-                    desimal = false;
+                    if (!tambah && !kurang && !kali && !bagi && !sisaBagi) {
+                        angka1 = Double.parseDouble(display.getText().toString());
+                        display.setText(null);
+                        tambah = true;
+                        desimal = false;
+                    } else {
+                        angka2 = Double.parseDouble(display.getText().toString());
+                        hasil = angka1 + angka2;
+                        display.setText(null);
+                        angka1 = hasil;
+                        angka2 = 0;
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
-                } if (angka1 > 0){
-                    angka1 = angka1 + angka2;
-                    angka2 = angka1;
-                    tambah = true;
-                } if (hasil > 0) {
-                    angka1 = hasil;
-                    tambah = true;
                 }
             }
         });
