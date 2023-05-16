@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView display;
@@ -20,9 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     boolean tambah, kurang, bagi, kali, sisaBagi, desimal;
 
-    double angka1 = 0, angka2 = 0, hasil;
-
-
+    double angka1 = 0, angka2 = 0, hasil ,x;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                display.setText(null);
                 angka1 = 0;
                 angka2 = 0;
+                display.setText(null);
             }
         });
 
@@ -254,7 +254,10 @@ public class MainActivity extends AppCompatActivity {
                     desimal = false;
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
-                }
+                } if (angka1 > 0){
+                angka2 = angka1 * angka2;
+                angka1 = angka2;
+            }
             }
         });
         btnSisaBagi.setOnClickListener(new View.OnClickListener() {
@@ -281,6 +284,13 @@ public class MainActivity extends AppCompatActivity {
                     desimal = false;
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan masukkan angka terlebih dahulu!", Toast.LENGTH_SHORT).show();
+                } if (angka1 > 0){
+                    angka1 = angka1 + angka2;
+                    angka2 = angka1;
+                    tambah = true;
+                } if (hasil > 0) {
+                    angka1 = hasil;
+                    tambah = true;
                 }
             }
         });
