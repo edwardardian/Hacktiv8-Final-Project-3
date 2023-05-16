@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 angka1 = 0;
                 angka2 = 0;
+                hasil = 0;
                 display.setText(null);
             }
         });
